@@ -5,8 +5,6 @@
 extern "C" {
 #endif
 
-#include <i2c.h>
-
 enum SHT40_Errors {
     SHT40_SUCCESS = 0,
 
@@ -45,10 +43,10 @@ typedef struct {
     float temp; // C
 
     uint8_t devAddr;
-    I2CDef *i2c;
+    void *i2c;
 } SHT40_Def;
 
-int SHT40_init(SHT40_Def *sht, I2CDef *i2c, uint8_t addr);
+int SHT40_init(SHT40_Def *sht, void *i2c, uint8_t addr);
 
 int SHT40_readSN(SHT40_Def *sht);
 

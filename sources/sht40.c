@@ -106,7 +106,7 @@ static bool isResponseValid(SHT40_Def *sht, const uint8_t *data) {
  * @param addr is the device address (on I2C bus)
  * @return SHT40_Errors values
  */
-int SHT40_init(SHT40_Def *sht, I2CDef *i2c, uint8_t addr) {
+int SHT40_init(SHT40_Def *sht, void *i2c, uint8_t addr) {
     if (sht == NULL || i2c == NULL || addr == 0)
         return SHT40_WRONG_DATA;
 
